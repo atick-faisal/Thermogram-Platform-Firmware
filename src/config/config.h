@@ -8,7 +8,7 @@
 
 const uint8_t N_SENSORS = 25U;
 const double DEFAULT_TEMP = 30.0;
-const uint32_t REFRESH_INTERVAL = 700;
+const uint32_t REFRESH_INTERVAL = 100;
 
 static uint8_t RIGHT_FOOT_SENSOR_ADDRESSES[N_SENSORS] = {
     32U, 33U, 34U, 35U, 36U, 37U, 38U, 39U, 40U, 41U, 42U, 43U, 44U,
