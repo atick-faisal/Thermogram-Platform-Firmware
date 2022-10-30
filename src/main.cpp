@@ -1,13 +1,20 @@
 #include "utils/utils.h"
 
+unsigned long looper = millis();
+
 void setup() {
-    initializeDebugLog();
+    // initializeDebugLog();
+    initializeProcessingComm();
 }
 
 void loop() {
-    String rightValues = getRightFootTempMap();
-    String leftValues = getLeftFootTempMap();
-    debugMessage(INFO, rightValues);
-    debugMessage(INFO, leftValues);
-    delay(3000U);
+    if (millis() > looper + REFRESH_INTERVAL) {
+        looper = millis();
+        String rightValues = getRightFootTempMap();
+        String leftValues = getLeftFootTempMap();
+        sendTempMapToProcessing(rightValues, leftValues);
+        
+        // debugMessage(INFO, rightValues);
+        // debugMessage(INFO, leftValues);
+    }
 }

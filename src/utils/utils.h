@@ -19,4 +19,8 @@ String getTempMap(Foot foot);
 String getRightFootTempMap();
 String getLeftFootTempMap();
 
+// ... Processing Utils
+void initializeProcessingComm();
+void sendTempMapToProcessing(String rightTempMap, String leftTempMap);
+
 #endif
