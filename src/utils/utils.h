@@ -14,10 +14,10 @@ void initializeDebugLog();
 void debugMessage(DebugLevel debugLevel, const String message);
 
 // ... Temperature Utils
-void readTempValues(uint8_t addresses[], double tempValues[]);
+void readTempValues(const uint8_t addresses[], double tempValues[]);
+void readAverageTempValues(const uint8_t addresses[], double tempValues[]);
 String getTempMap(Foot foot);
-String getRightFootTempMap();
-String getLeftFootTempMap();
+String getAverageTempMap(Foot foot);
 
 // ... Processing Utils
 void initializeProcessingComm();

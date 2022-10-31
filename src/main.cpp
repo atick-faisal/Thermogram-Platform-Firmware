@@ -8,13 +8,18 @@ void setup() {
 }
 
 void loop() {
-    if (millis() > looper + REFRESH_INTERVAL) {
-        looper = millis();
-        String rightValues = getRightFootTempMap();
-        String leftValues = getLeftFootTempMap();
-        sendTempMapToProcessing(rightValues, leftValues);
-        
-        // debugMessage(INFO, rightValues);
-        // debugMessage(INFO, leftValues);
-    }
+    // if (millis() > looper + REFRESH_INTERVAL) {
+    //     looper = millis();
+    //     String rightValues = getRightFootTempMap();
+    //     String leftValues = getLeftFootTempMap();
+    //     sendTempMapToProcessing(rightValues, leftValues);
+
+    //     // debugMessage(INFO, rightValues);
+    //     // debugMessage(INFO, leftValues);
+    // }
+    String rightValues = getAverageTempMap(RIGHT);
+    String leftValues = getAverageTempMap(LEFT);
+    sendTempMapToProcessing(rightValues, leftValues);
+    // debugMessage(INFO, rightValues);
+    // debugMessage(INFO, leftValues);
 }
